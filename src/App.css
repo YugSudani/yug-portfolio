@@ -1,0 +1,610 @@
+html,body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.header_main_container{
+  display: flex;
+  justify-content: space-around;
+  height: 10vh;
+  width: 100%;
+  background-color: rgb(115, 183, 210);
+  position: sticky;
+  top: 0;
+}
+
+.header_name{
+  font-size: 25px;
+  color: white;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header_1_cnt{
+    height: 100%;
+    margin-right: 30vw;
+    display: flex;
+    align-items: center;
+}
+
+.header_2_cnt{
+  width: 40vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.link{
+  text-decoration: none;
+  color:black;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+}
+
+
+@media screen and (max-width:400px){
+  .header_main_container{
+    height: 7vh;
+    position: relative;
+  }
+  
+  .header_name{
+  font-size: 20px;
+  color:white;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+  .header_1_cnt{
+    margin-right: 8vw;
+  }
+  .header_2_cnt{
+    width: 75vw;
+  }
+  
+.link{
+  font-size: 16px;
+  font-weight: bold;
+  }
+
+}
+
+
+.home_main_cnt{
+  display: flex;
+  height: 82vh;
+}
+
+.home_txt_cnt{
+  height: 65vh;
+  display: inline;
+  width: 40vw;
+  margin-left: 6.3%;
+  font-size: 60px;
+  font-weight: bold;
+
+}
+
+.mern_home{
+  height: 8vh;
+}
+
+.home_btn_contact_cnt{
+    height: 5vh;
+    width: 10vw;
+    text-align: center;
+    font-weight: bold;
+    background-color:rgb(7, 182, 251);;
+    border-radius: 9px;
+    display: block;
+    border: none;
+    margin-top: 10vh;
+}
+
+.icon_linkedin{
+  height: 22vh;
+  width: 11vw;
+}
+
+.home_btn_Linkedin_cnt{
+    height: 20px;
+    background-color: transparent;
+    border: none;
+    margin-top: 47vh;
+    margin-left: -30%;
+}
+
+.icon_github{
+  height: 8vh;
+  width: 4vw;
+}
+
+.home_btn_Github_cnt{
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  margin-left: -4vw;
+  margin-top: 60vh;
+}
+
+.home_2_pic_main_cnt{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:90vw;
+  height: 80vh;
+}
+
+.home_pic{
+  height: 70vh;
+  width: 35vw;
+  border-radius: 120px;
+}
+
+
+@media  screen and (max-width:400px){
+  
+  
+.home_main_cnt{
+  display: block;
+}
+
+.home_txt_cnt{
+  height: 50vh;
+  width: 60vw;
+  margin-left: 2%;
+  margin-top: -5vh;
+  font-size: 55px;
+  font-weight: bold;
+  display: block;
+
+}
+
+.mern_home{
+  height: 7vh;
+}
+
+.home_btn_contact_cnt{
+    height: 5vh;
+    width: 35vw;
+    text-align: center;
+    background-color:rgb(7, 182, 251);;
+    border-radius: 9px;
+    display: block;
+    border: none;
+    margin-top: -2vh;
+}
+
+.icon_linkedin{
+  height: 15vh;
+  width: 30vw;
+}
+
+.home_btn_Linkedin_cnt{
+    height: 20px;
+    background-color: transparent;
+    margin-left: 56%;
+    margin-top: -5vh;
+    border: none;
+    
+}
+
+.icon_github{
+  height: 5.5vh;
+  width: 11vw;
+}
+
+.home_btn_Github_cnt{
+    height: 20px;
+    background-color: transparent;
+    margin-top: 4vh;
+    margin-left: -9vw;
+    border: none;
+}
+
+.home_2_pic_main_cnt{
+  width: 100%;
+  height: 25vh;
+}
+
+.home_pic{
+  height: 30vh;
+  width: 70vw;
+  margin-top: 1vh;
+  margin-right: 60%;
+}
+
+
+}
+
+
+/* _______________________About section */
+
+.about_main_container{
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.section_headings{
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: rgb(101, 101, 232);
+}
+
+.about_img{
+  width: 30vw;
+  height: 60vh;
+
+}
+
+.about_description{
+  width: 55vw;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@media screen and (max-width:400px){
+ 
+.about_main_container{
+  height: 90vh;
+  width: 100%;
+  display: block; 
+  text-align:justify;
+  margin-top: -3vh;
+}
+
+.section_headings{
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: rgb(101, 101, 232);
+}
+
+.about_img{
+  width: 75vw;
+  height: 35vh;
+  margin-left: 15%;
+}
+
+.about_description{
+  width: 90vw;
+  margin-left: 5vw;
+} 
+}
+
+
+.skill_main_cnt{
+  height: 95vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.skill_text_cnt{
+  height: 40vh;
+  width: 50vw;
+  margin-top: -55vh;
+  text-align: justify;
+}
+
+
+th{
+  text-align: center;
+  border: 2px solid skyblue;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px;
+}
+td{
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
+}
+
+.skill_table{
+  margin-left: 0%;
+  font-size: 17px;
+}
+
+.skill_img_{
+  border-radius: 50px;
+  height: 65vh;
+  width: 40vw;  
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+ 
+
+@media screen and (max-width:400px) {
+  
+.skill_main_cnt{
+  height: 90vh;
+  width: 100%;
+ 
+}
+
+.skill_text_cnt{
+  height: 45vh;
+  width: 85vw;
+  margin-top: -50vh;
+  text-align: justify;
+}
+
+.skill_table{
+  margin-left: -8.5%;
+  font-size: 14.5px;
+}
+
+th{
+  color: blue;
+}
+
+td{
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
+  text-align: center;
+}
+
+.skill_img_{
+ display: none;
+}
+
+}
+
+
+
+
+
+
+/* _______________________Work section */
+
+.work_main_cnt{
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.work_img{
+  height: 30vh;
+  width: 30vw;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.6) 0px 5px 15px;
+}
+
+@media screen and (max-width:400px){
+  .work_main_cnt{
+    height: 85vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .work_img{
+    height: 20vh;
+    width: 85vw;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 5px 15px;
+  }   
+}
+
+/* _________________________Contact section */
+
+
+.contact_main_cnt{
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+}
+.tbl_contact{
+  height: 30vh;
+  width: 40vw;  
+}
+.tbl_contact tr,td{
+  text-align: right;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+input{
+  border: none;
+  height: 50%;
+  width: 93%;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.btn_contact_submit{
+  margin-top: 10%;
+  background-color: skyblue;
+  border: none;
+  border-radius: 15px;
+  height: 6vh;
+  width: 10vw;
+  font-size: 20px;
+}
+
+@media screen and (max-width:400px) {
+  
+.contact_main_cnt{
+  height: 35vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+}
+.tbl_contact{
+  height: 20vh;
+  width: 70vw;  
+}
+.tbl_contact tr,td{
+  text-align: right;
+  border: none;
+  border-radius: 9px;
+  padding: 5px;
+}
+
+input{
+  border: none;
+  height: 50%;
+  width: 87%;
+  padding: 8px;
+  font-size: 15px;
+  background-color: transparent;
+}
+
+.btn_contact_submit{
+  margin-top: 10%;
+  background-color: skyblue;
+  border: none;
+  border-radius: 15px;
+  height: 6vh;
+  width: 40vw;
+  font-size: 20px;
+}
+
+}
+
+/* __________________________footer section */
+
+.Footer_container{
+  background-color: rgb(6, 20, 56);
+  height: 24vh;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.Footer_container .home_btn_Linkedin_cnt{
+  height:5vh;
+  width: 5vw;
+  margin-top: -8%;
+  margin-right: -20%;
+}
+.Footer_container .home_btn_Github_cnt{
+  height: 8vh;
+  width: 4vw;
+  margin-top: 0%;
+  margin-right: -25%;
+  background: white;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.Back_to_top{
+  display: none;
+}
+
+
+.mern_footer{
+    height: 12vh;
+    width: 8vw;
+    margin-left: -26%;
+}
+
+.footer_contact{
+  background-color: rgb(6, 20, 56);
+  height: 12  vh;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width:400px) {
+  
+.Footer_container{
+  background-color: rgb(6, 20, 56);
+  height: 22vh;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 22px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.Footer_container .home_btn_Linkedin_cnt{
+  display: none;
+ 
+}
+.Footer_container .home_btn_Github_cnt{
+  display: none;
+}
+
+.Back_to_top{
+  display:block;
+  color:white;
+  text-decoration: none;
+  font-size: 15px;
+  background-color: skyblue;
+  color:darkblue;
+  border-radius: 15px;
+  padding: 5px;
+  height: 3vh;
+  display: flex;
+  align-items: center;
+}
+
+.mern_footer{
+  margin: 0;
+  height: 10vh;
+  width: 20vw;
+  display: inline;
+}
+
+
+.footer_contact{
+  height: 17vh;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+}
+
+
+/* ___________________Animations/Effects */
+
+
+@keyframes fadeInSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  opacity: 0;
+  animation: fadeInSlideDown 1s ease-out forwards;
+}
