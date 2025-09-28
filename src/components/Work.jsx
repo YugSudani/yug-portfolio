@@ -4,6 +4,7 @@ import work3 from "../components/IMGS/work3.jpg"
 import weather from "../components/IMGS/weather.png"
 import game1IMG from "../components/IMGS/game1IMG.png"
 import ecart from "../components/IMGS/ecart.png"
+import AI_poster from "./IMGS/AI_poster.png"
 
 const Work=()=>{
 
@@ -11,6 +12,7 @@ const Work=()=>{
         <>
             <p id="Work" className="section_headings">Work</p>
             <div className="work_main_cnt">
+                    <a className="work_link" href="https://aitools-bs8f.onrender.com"><img className="work_img" src={AI_poster} alt="projects" /></a>
                     <a className="work_link" href="https://ecart-vjnr.onrender.com/"><img className="work_img" src={ecart} alt="projects" /></a>
                     <a className="work_link" href="https://yugsudani.github.io/weather/"><img className="work_img" src={weather} alt="projects" /></a>
                     <a className="work_link" href="https://yugsudani.github.io/game1/"><img className="work_img" src={game1IMG} alt="projects" /></a>

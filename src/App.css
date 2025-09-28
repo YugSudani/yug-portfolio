@@ -358,7 +358,7 @@ td{
 /* _______________________Work section */
 
 .work_main_cnt{
-  height: 60vh;
+  height: 75vh;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -375,7 +375,7 @@ td{
 
 @media screen and (max-width:400px){
   .work_main_cnt{
-    height: 85vh;
+    height: 95vh;
     width: 100%;
     display: flex;
     justify-content: space-around;
