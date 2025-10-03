@@ -25,7 +25,7 @@ const Contect=()=>{
                     </table>
                         
                     
-                <button className="btn_contact_submit" onClick={()=>alert("Details IN _ _ Thank You _ _")} type="">Submit</button>
+                <button className="btn_contact_submit" onClick={()=>alert("Thank You _ _")} type="">Submit</button>
                 </form>
 
         

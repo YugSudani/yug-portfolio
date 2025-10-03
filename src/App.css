@@ -277,7 +277,7 @@ html,body{
 
 
 .skill_main_cnt{
-  height: 95vh;
+  height: 115vh;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -287,7 +287,7 @@ html,body{
 .skill_text_cnt{
   height: 40vh;
   width: 50vw;
-  margin-top: -55vh;
+  margin-top: -65vh;
   text-align: justify;
 }
 
@@ -302,14 +302,21 @@ td{
   box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
 }
 
+.skill_tbl_container{
+  overflow-x: auto;
+  margin-left: 0%;
+  width: 100%;
+}
+
 .skill_table{
   margin-left: 0%;
   font-size: 17px;
+  width: 100%;
 }
 
 .skill_img_{
   border-radius: 50px;
-  height: 65vh;
+  height: 70vh;
   width: 40vw;  
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -317,8 +324,8 @@ td{
 
 @media screen and (max-width:400px) {
   
-.skill_main_cnt{
-  height: 90vh;
+  .skill_main_cnt{
+  height: 115vh;
   width: 100%;
  
 }
@@ -326,10 +333,13 @@ td{
 .skill_text_cnt{
   height: 45vh;
   width: 85vw;
-  margin-top: -50vh;
+  margin-top: -70vh;
   text-align: justify;
 }
-
+.skill_tbl_container{
+  margin-left: -5vw;
+  padding: 8%;
+}
 .skill_table{
   margin-left: -8.5%;
   font-size: 14.5px;
