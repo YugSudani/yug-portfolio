@@ -221,6 +221,7 @@ html,body{
 /* _______________________About section */
 
 .about_main_container{
+  margin-top: -7vh;
   height: 80vh;
   width: 100%;
   display: flex;
@@ -245,6 +246,7 @@ html,body{
   width: 55vw;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 
 @media screen and (max-width:400px){
  
@@ -274,7 +276,7 @@ html,body{
   margin-left: 5vw;
 } 
 }
-
+/* _________________Skill_________________________ */
 
 .skill_main_cnt{
   height: 115vh;
@@ -320,20 +322,20 @@ td{
   width: 40vw;  
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
- 
+
 
 @media screen and (max-width:400px) {
   
   .skill_main_cnt{
-  height: 115vh;
+  height: 55vh;
   width: 100%;
- 
+  margin-bottom: -25vh;
 }
 
 .skill_text_cnt{
-  height: 45vh;
+  height: 55vh;
   width: 85vw;
-  margin-top: -70vh;
+  margin-top: -60vh;
   text-align: justify;
 }
 .skill_tbl_container{
@@ -355,13 +357,21 @@ td{
 }
 
 .skill_img_{
- display: none;
+  display: none;
 }
 
 }
 
 
 
+
+@media screen and (max-width:1300px){
+  .skill_main_cnt{
+    height: 175vh;
+    margin-top: -30vh;
+    
+  }
+}
 
 
 
@@ -391,6 +401,7 @@ td{
     justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
+    margin-top: -0vh;
   }
   
   .work_img{
