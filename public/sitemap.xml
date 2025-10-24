@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <row>
+    <_xml_version_1_0_encoding_UTF_8_>&lt;urlset</_xml_version_1_0_encoding_UTF_8_>
+  </row>
+  <row>
+    <_xml_version_1_0_encoding_UTF_8_>xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"</_xml_version_1_0_encoding_UTF_8_>
+  </row>
+  <row>
+    <_xml_version_1_0_encoding_UTF_8_>xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</_xml_version_1_0_encoding_UTF_8_>
+  </row>
+  <row>
+    <_xml_version_1_0_encoding_UTF_8_>xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9</_xml_version_1_0_encoding_UTF_8_>
+  </row>
+  <row>
+    <_xml_version_1_0_encoding_UTF_8_>http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"&gt;</_xml_version_1_0_encoding_UTF_8_>
+  </row>
+  <row>
+    <_xml_version_1_0_encoding_UTF_8_>&lt;url&gt;</_xml_version_1_0_encoding_UTF_8_>
+  </row>
+  <row>
+    <_xml_version_1_0_encoding_UTF_8_>&lt;loc&gt;https://yug-ptdf.onrender.com/&lt;/loc&gt;</_xml_version_1_0_encoding_UTF_8_>
+  </row>
+  <row>
+    <_xml_version_1_0_encoding_UTF_8_>&lt;lastmod&gt;2025-10-24T02:53:27+00:00&lt;/lastmod&gt;</_xml_version_1_0_encoding_UTF_8_>
+  </row>
+  <row>
+    <_xml_version_1_0_encoding_UTF_8_>&lt;/url&gt;</_xml_version_1_0_encoding_UTF_8_>
+  </row>
+  <row>
+    <_xml_version_1_0_encoding_UTF_8_>&lt;/urlset&gt;</_xml_version_1_0_encoding_UTF_8_>
+  </row>
+</root>
