@@ -1,0 +1,129 @@
+/* Hero Section styles */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 120px;
+    /* Increased padding for desktop to move avatar down */
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.08) 0%, transparent 70%);
+    animation: float 6s ease-in-out infinite;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.profile-image-wrapper {
+    margin-bottom: 2rem;
+}
+
+.profile-image {
+    width: 280px;
+    height: 280px;
+    margin: 0 auto;
+    border-radius: 50%;
+    padding: 0.5rem;
+    background: linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%);
+    animation: glow 3s ease-in-out infinite;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--color-bg-dark);
+}
+
+.hero-title {
+    margin-bottom: 1rem;
+}
+
+.typing-container {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.typing-text {
+    color: var(--color-accent);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    display: inline-block;
+}
+
+.cursor {
+    display: inline-block;
+    margin-left: 4px;
+    animation: blink 1s step-end infinite;
+    color: var(--color-accent);
+}
+
+.hero-description {
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    color: var(--color-text-secondary);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .hero-section {
+        padding-top: 100px;
+        /* Perfect padding for mobile */
+        min-height: auto;
+        padding-bottom: 4rem;
+    }
+
+    .profile-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding-top: 100px;
+        /* Maintain perfect mobile positioning */
+    }
+
+    .profile-image {
+        width: 220px;
+        height: 220px;
+    }
+}
