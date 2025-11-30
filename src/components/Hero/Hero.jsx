@@ -57,11 +57,6 @@ const Hero = () => {
                             <span className="cursor">|</span>
                         </h2>
                     </div>
-                    <p className="hero-description slide-up">
-                        Passionate MERN Stack Developer specializing in building responsive web applications
-                        with AI Integration & Automation. Strong foundation in REST APIs, responsive UI design,
-                        and version control using GitHub.
-                    </p>
                     <div className="hero-buttons slide-up">
                         <button className="btn btn-primary" onClick={() => scrollToSection('projects')}>
                             View Projects
