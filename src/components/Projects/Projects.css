@@ -64,6 +64,11 @@
     margin-top: 1rem;
     width: 100%;
     justify-content: center;
+    color: white;
+}
+
+.project-link:hover {
+    color: white;
 }
 
 @media (max-width: 768px) {

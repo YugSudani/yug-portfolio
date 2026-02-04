@@ -6,6 +6,13 @@ const Projects = () => {
 
     const projects = [
         {
+            title: 'Pulse Check',
+            badge: 'Server Uptime Monitoring',
+            description: 'Built an uptime monitoring web app to track website availability and response status. Provides simple monitoring with a clean dashboard UI and live status checking with AI integration.',
+            tech: ['React', 'Node.js', 'Express', 'MongoDB'],
+            link: 'http://pulse-check-5qky.onrender.com/'
+        },
+        {
             title: 'AI Tools Web App',
             badge: 'MERN Stack',
             description: 'Developed a full-stack dashboard integrating multiple AI utilities using React, Node.js, Express, and MongoDB. Implemented secure login, session handling, and responsive UI with dynamic tool routing.',
