@@ -1,0 +1,124 @@
+.contact-content {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.contact-info {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-info h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: hsl(var(--text-primary));
+}
+
+.contact-info p {
+    color: hsl(var(--text-secondary));
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.contact-details {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5rem;
+    padding: 1.25rem 2rem;
+    background: hsla(var(--text-primary) / 0.03);
+    border: 1px solid hsla(var(--text-primary) / 0.05);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: hsl(var(--text-primary));
+    cursor: pointer;
+    min-width: 340px;
+}
+
+.contact-item:hover {
+    background: hsla(var(--primary) / 0.1);
+    border-color: hsla(var(--primary) / 0.3);
+    color: hsl(var(--primary));
+    transform: translateY(-5px);
+}
+
+.contact-item-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-item-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: hsl(var(--text-muted));
+    transition: color 0.3s ease;
+}
+
+.contact-item:hover .contact-item-right {
+    color: hsl(var(--primary));
+}
+
+.contact-icon {
+    color: hsl(var(--primary));
+    display: inline-block;
+}
+
+.copy-action-icon {
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+/* Copy State Classes */
+.active-state {
+    background: hsla(var(--primary) / 0.15) !important;
+    border-color: hsla(var(--primary) / 0.5) !important;
+    transform: translateY(-5px);
+}
+
+.active-state .contact-item-right {
+    color: hsl(var(--primary)) !important;
+}
+
+.success {
+    color: #22c55e !important;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+    color: hsl(var(--primary)) !important;
+}
+
+@media (max-width: 768px) {
+    .contact-item {
+        min-width: 100%;
+        gap: 1.5rem;
+        padding: 1.25rem 1.5rem;
+    }
+}
