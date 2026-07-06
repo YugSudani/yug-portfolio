@@ -9,7 +9,7 @@ const About = () => {
                 <div className="about-content">
                     <div className="about-card glass">
                         <div className="about-header">
-                            <User size={32} className="about-icon" />
+                            <User size={43} className="about-icon" />
                         </div>
                         <div className="about-text">
                             <p>
