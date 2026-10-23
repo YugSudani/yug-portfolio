@@ -5,7 +5,7 @@
     padding: 1.75rem 1.6rem;
     height: 100%;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     background: hsla(var(--bg-dark) / 0.6);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
@@ -22,6 +22,7 @@
     right: 0;
     width: 140px;
     height: 140px;
+    border-top-right-radius: var(--radius-lg);
     background: radial-gradient(circle at top right, hsla(var(--primary) / 0.12), transparent 70%);
     pointer-events: none;
 }
@@ -106,12 +107,22 @@
     border: 1px solid hsla(var(--text-primary) / 0.1);
 }
 
+.tool-action-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    position: relative;
+}
+
 .tool-action-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.45rem;
-    width: 75%;
+    width: auto;
+    min-width: 140px;
     max-width: 190px;
     padding: 0.4rem 1rem;
     height: 2.15rem;
@@ -119,7 +130,7 @@
     font-weight: 600;
     font-family: inherit;
     text-decoration: none;
-    margin: 0 auto;
+    margin: 0;
     border-radius: var(--radius-full);
     position: relative;
     overflow: hidden;
@@ -129,6 +140,151 @@
 
 .tool-action-btn:disabled {
     cursor: default;
+}
+
+/* Instruction Button beside Download ZIP button */
+.tool-instruction-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.tool-instruction-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    height: 2.15rem;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    font-family: inherit;
+    border-radius: var(--radius-full);
+    background: hsla(var(--text-primary) / 0.08);
+    border: 1px solid hsla(var(--text-primary) / 0.16);
+    color: hsl(var(--text-secondary));
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.tool-instruction-btn:hover,
+.tool-instruction-btn.active {
+    background: hsla(var(--primary) / 0.18);
+    border-color: hsl(var(--primary));
+    color: hsl(var(--primary));
+    box-shadow: 0 0 12px hsla(var(--primary) / 0.3);
+    transform: translateY(-1px);
+}
+
+/* Floating Instruction Popover */
+.tool-instruction-popover {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    right: 50%;
+    transform: translateX(50%);
+    width: 320px;
+    max-width: 88vw;
+    background: hsla(var(--bg-dark) / 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid hsla(var(--primary) / 0.35);
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.65), 0 0 16px hsla(var(--primary) / 0.25);
+    padding: 0.85rem 1rem;
+    z-index: 100;
+    text-align: left;
+    animation: popoverFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.tool-instruction-popover::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: hsla(var(--primary) / 0.35) transparent transparent transparent;
+}
+
+@keyframes popoverFadeIn {
+    from {
+        opacity: 0;
+        transform: translate(50%, 6px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(50%, 0);
+    }
+}
+
+.instruction-popover-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid hsla(var(--text-primary) / 0.1);
+}
+
+.instruction-popover-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: hsl(var(--primary));
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.instruction-close-btn {
+    background: transparent;
+    border: none;
+    color: hsl(var(--text-secondary));
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.instruction-close-btn:hover {
+    color: #ffffff;
+    background: hsla(var(--text-primary) / 0.12);
+}
+
+.instruction-popover-content {
+    font-size: 0.78rem;
+    color: hsl(var(--text-secondary));
+    line-height: 1.55;
+}
+
+.instruction-flow-text {
+    margin: 0;
+    color: hsl(var(--text-primary));
+    font-size: 0.78rem;
+    line-height: 1.55;
+    word-break: break-word;
+}
+
+.instruction-flow-text code {
+    background: hsla(var(--primary) / 0.15);
+    color: hsl(var(--primary));
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.75rem;
+    border: 1px solid hsla(var(--primary) / 0.3);
+}
+
+.instruction-flow-text strong {
+    color: #ffffff;
+    font-weight: 600;
 }
 
 /* Starting State */

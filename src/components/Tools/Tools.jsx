@@ -1,5 +1,5 @@
 import { forwardRef, useState } from "react";
-import { Download, ExternalLink, Loader2, Check } from "lucide-react";
+import { Download, ExternalLink, Loader2, Check, Info, X } from "lucide-react";
 import "./Tools.css";
 
 const toolsData = [
@@ -18,6 +18,8 @@ const toolsData = [
     url: "/beeSkip.zip",
     downloadName: "beeSkip.zip",
     buttonText: "Download ZIP",
+    instructions:
+      "Download ZIP → Extract it → Go to chrome://extensions → Enable Developer Mode → Click “Load unpacked” → Select the extracted folder.",
   },
   {
     title: "AI Tools Web App",
@@ -33,6 +35,7 @@ const toolsData = [
 
 const Tools = forwardRef(({ asSection = false, className = "" }, ref) => {
   const [downloadStates, setDownloadStates] = useState({});
+  const [activeInstruction, setActiveInstruction] = useState(null);
 
   const handleDownload = (tool) => {
     const currentStatus = downloadStates[tool.title] || "idle";
@@ -86,41 +89,95 @@ const Tools = forwardRef(({ asSection = false, className = "" }, ref) => {
               (() => {
                 const status = downloadStates[tool.title] || "idle";
                 return (
-                  <button
-                    type="button"
-                    onClick={() => handleDownload(tool)}
-                    disabled={status !== "idle"}
-                    className={`tool-action-btn btn btn-primary ${
-                      status !== "idle" ? `is-${status}` : ""
-                    }`}
-                    aria-label={`Download ${tool.title}`}
-                  >
-                    {status === "starting" && (
-                      <>
-                        <Loader2 size={15} className="btn-spinner" />
-                        <span>Starting...</span>
-                      </>
+                  <div className="tool-action-group">
+                    <button
+                      type="button"
+                      onClick={() => handleDownload(tool)}
+                      disabled={status !== "idle"}
+                      className={`tool-action-btn btn btn-primary ${status !== "idle" ? `is-${status}` : ""
+                        }`}
+                      aria-label={`Download ${tool.title}`}
+                      title={
+                        tool.instructions
+                          ? `Instructions: ${tool.instructions}`
+                          : undefined
+                      }
+                    >
+                      {status === "starting" && (
+                        <>
+                          <Loader2 size={15} className="btn-spinner" />
+                          <span>Starting...</span>
+                        </>
+                      )}
+                      {status === "downloading" && (
+                        <>
+                          <Download size={15} className="btn-bounce" />
+                          <span>Downloading...</span>
+                          <div className="download-progress-bar" />
+                        </>
+                      )}
+                      {status === "completed" && (
+                        <>
+                          <Check size={15} className="btn-check-pop" />
+                          <span>Downloaded!</span>
+                        </>
+                      )}
+                      {status === "idle" && (
+                        <>
+                          <Download size={15} />
+                          <span>{tool.buttonText}</span>
+                        </>
+                      )}
+                    </button>
+
+                    {tool.instructions && (
+                      <div className="tool-instruction-wrapper">
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setActiveInstruction(
+                              activeInstruction === tool.title
+                                ? null
+                                : tool.title
+                            )
+                          }
+                          className={`tool-instruction-btn ${activeInstruction === tool.title ? "active" : ""
+                            }`}
+                          aria-label="Installation Instructions"
+                          title="Installation Instructions"
+                        >
+                          <Info size={14} />
+                          <span>How to use?</span>
+                        </button>
+
+                        {activeInstruction === tool.title && (
+                          <div className="tool-instruction-popover">
+                            <div className="instruction-popover-header">
+                              <span className="instruction-popover-title">
+                                <Info size={13} /> Installation Guide
+                              </span>
+                              <button
+                                type="button"
+                                className="instruction-close-btn"
+                                onClick={() => setActiveInstruction(null)}
+                                aria-label="Close instructions"
+                              >
+                                <X size={13} />
+                              </button>
+                            </div>
+                            <div className="instruction-popover-content">
+                              <p className="instruction-flow-text">
+                                Download ZIP → Extract it → Go to{" "}
+                                <code>chrome://extensions</code> → Enable
+                                Developer Mode → Click “Load unpacked” → Select
+                                the extracted folder.
+                              </p>
+                            </div>
+                          </div>
+                        )}
+                      </div>
                     )}
-                    {status === "downloading" && (
-                      <>
-                        <Download size={15} className="btn-bounce" />
-                        <span>Downloading...</span>
-                        <div className="download-progress-bar" />
-                      </>
-                    )}
-                    {status === "completed" && (
-                      <>
-                        <Check size={15} className="btn-check-pop" />
-                        <span>Downloaded!</span>
-                      </>
-                    )}
-                    {status === "idle" && (
-                      <>
-                        <Download size={15} />
-                        <span>{tool.buttonText}</span>
-                      </>
-                    )}
-                  </button>
+                  </div>
                 );
               })()
             ) : (
