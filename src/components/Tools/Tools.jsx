@@ -1,5 +1,5 @@
-import { forwardRef } from "react";
-import { Download, ExternalLink, Wrench } from "lucide-react";
+import { forwardRef, useState } from "react";
+import { Download, ExternalLink, Loader2, Check } from "lucide-react";
 import "./Tools.css";
 
 const toolsData = [
@@ -32,6 +32,38 @@ const toolsData = [
 ];
 
 const Tools = forwardRef(({ asSection = false, className = "" }, ref) => {
+  const [downloadStates, setDownloadStates] = useState({});
+
+  const handleDownload = (tool) => {
+    const currentStatus = downloadStates[tool.title] || "idle";
+    if (currentStatus !== "idle") return;
+
+    // Step 1: Starting... (600ms)
+    setDownloadStates((prev) => ({ ...prev, [tool.title]: "starting" }));
+
+    setTimeout(() => {
+      // Step 2: Downloading... (1300ms) and trigger actual download
+      setDownloadStates((prev) => ({ ...prev, [tool.title]: "downloading" }));
+
+      const link = document.createElement("a");
+      link.href = tool.url;
+      link.download = tool.downloadName || "download.zip";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      setTimeout(() => {
+        // Step 3: Downloaded! (900ms)
+        setDownloadStates((prev) => ({ ...prev, [tool.title]: "completed" }));
+
+        setTimeout(() => {
+          // Revert back to original state
+          setDownloadStates((prev) => ({ ...prev, [tool.title]: "idle" }));
+        }, 900);
+      }, 1300);
+    }, 600);
+  };
+
   const content = (
     <div className="tools-inner-container">
       {toolsData.map((tool, index) => (
@@ -51,14 +83,46 @@ const Tools = forwardRef(({ asSection = false, className = "" }, ref) => {
             </div>
 
             {tool.isDownload ? (
-              <a
-                href={tool.url}
-                download={tool.downloadName}
-                className="tool-action-btn btn btn-primary"
-              >
-                <Download size={15} />
-                <span>{tool.buttonText}</span>
-              </a>
+              (() => {
+                const status = downloadStates[tool.title] || "idle";
+                return (
+                  <button
+                    type="button"
+                    onClick={() => handleDownload(tool)}
+                    disabled={status !== "idle"}
+                    className={`tool-action-btn btn btn-primary ${
+                      status !== "idle" ? `is-${status}` : ""
+                    }`}
+                    aria-label={`Download ${tool.title}`}
+                  >
+                    {status === "starting" && (
+                      <>
+                        <Loader2 size={15} className="btn-spinner" />
+                        <span>Starting...</span>
+                      </>
+                    )}
+                    {status === "downloading" && (
+                      <>
+                        <Download size={15} className="btn-bounce" />
+                        <span>Downloading...</span>
+                        <div className="download-progress-bar" />
+                      </>
+                    )}
+                    {status === "completed" && (
+                      <>
+                        <Check size={15} className="btn-check-pop" />
+                        <span>Downloaded!</span>
+                      </>
+                    )}
+                    {status === "idle" && (
+                      <>
+                        <Download size={15} />
+                        <span>{tool.buttonText}</span>
+                      </>
+                    )}
+                  </button>
+                );
+              })()
             ) : (
               <a
                 href={tool.url}
