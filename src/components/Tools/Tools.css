@@ -1,0 +1,172 @@
+.tools-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.75rem 1.6rem;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background: hsla(var(--bg-dark) / 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid hsla(var(--text-primary) / 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border-radius: var(--radius-lg);
+    text-align: center;
+}
+
+.tools-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(circle at top right, hsla(var(--primary) / 0.12), transparent 70%);
+    pointer-events: none;
+}
+
+.tools-inner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+
+.tool-block-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    justify-content: space-between;
+}
+
+/* Tool Item */
+.tool-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.tool-header {
+    margin-bottom: 0.35rem;
+    width: 100%;
+}
+
+.tool-title-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    flex-wrap: wrap;
+}
+
+.tool-header h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    color: hsl(var(--text-primary));
+}
+
+.tool-header .project-badge {
+    font-size: 0.68rem;
+    padding: 0.15rem 0.65rem;
+    letter-spacing: 0.5px;
+}
+
+.tool-description {
+    color: hsl(var(--text-secondary));
+    font-size: 0.8rem;
+    line-height: 1.45;
+    margin-bottom: 0.45rem;
+    max-width: 95%;
+}
+
+.tool-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 0.65rem;
+    justify-content: center;
+}
+
+.tool-tech span {
+    font-size: 0.68rem;
+    color: wheat;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    background: hsla(var(--text-primary) / 0.05);
+    border-radius: 5px;
+    border: 1px solid hsla(var(--text-primary) / 0.1);
+}
+
+.tool-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    width: 75%;
+    max-width: 190px;
+    padding: 0.4rem 1rem;
+    height: 2.15rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0 auto;
+    border-radius: var(--radius-full);
+}
+
+/* Sleek Divider between the two tools */
+.tools-card-divider {
+    position: relative;
+    width: 85%;
+    margin: 0.75rem auto;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsla(var(--primary) / 0.35), transparent);
+}
+
+.tools-card-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: hsl(var(--primary));
+    box-shadow: 0 0 6px hsl(var(--primary));
+}
+
+/* Standalone Section Styles if used independently */
+.tools-section {
+    position: relative;
+    padding: 5rem 0;
+}
+
+.tools-standalone-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .tools-card {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .tool-header h4 {
+        font-size: 1.15rem;
+    }
+
+    .tool-action-btn {
+        width: 85%;
+    }
+}

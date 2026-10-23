@@ -1,5 +1,6 @@
 import { ExternalLink } from "lucide-react";
 import useScrollAnimation from "../../utils/useScrollAnimation";
+import Tools from "../Tools/Tools";
 import "./Projects.css";
 
 const Projects = () => {
@@ -30,7 +31,7 @@ const Projects = () => {
       badge: "File Transfer",
       description:
         "Built a file sharing web app to upload and download files using Node.js, Express, and MongoDB.",
-      tech: ["React", "Node.js", "AWS S3 FILEBASE", "Express", "MongoDB"],
+      tech: ["React", "Node.js", "AWS S3 Filebase", "Express", "MongoDB", "REST APIs"],
       link: "https://sendeverywhere-file-transfer-1.onrender.com/",
     },
     {
@@ -38,17 +39,10 @@ const Projects = () => {
       badge: "E-Commerce Platform",
       description:
         "Developed a full-featured eCommerce platform with product listings, cart management, and user authentication. Integrated MongoDB for dynamic product storage and Express APIs for seamless backend operations.",
-      tech: ["React", "Node.js", "Express", "MongoDB"],
+      tech: ["React", "Node.js", "Express", "MongoDB", "JWT Auth", "REST APIs"],
       link: "https://jwelcommerce.onrender.com/",
     },
-    {
-      title: "AI Tools Web App",
-      badge: "AI Web App",
-      description:
-        "Developed a full-stack dashboard integrating multiple AI utilities using React, Node.js, Express, and MongoDB. Implemented secure login, session handling, and responsive UI with dynamic tool routing.",
-      tech: ["React", "Node.js", "Express", "MongoDB", "OpenAI API"],
-      link: "https://aitools-bs8f.onrender.com/",
-    },
+
   ];
 
   return (
@@ -82,6 +76,9 @@ const Projects = () => {
               </a>
             </div>
           ))}
+
+          {/* Fourth tile: Tools Showcase with BeeSkip and AI Tools Web App */}
+          <Tools ref={(el) => addToRefs(el, projects.length)} />
         </div>
       </div>
     </section>
@@ -89,3 +86,4 @@ const Projects = () => {
 };
 
 export default Projects;
+
